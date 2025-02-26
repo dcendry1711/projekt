@@ -1,10 +1,18 @@
-let a = 4; // zmienna typu NUMBER
-console.log(typeof(a)); //typeOf umożliwia sprawdzenie typu danych
-let b = 'JavaScript'; // zmienna typu STRING
-console.log(typeof(b));
-let c = true; // zmienna typu BOOLEAN true lub false
-console.log(typeof(c));
-let d = null; // zmienna typu null - nic, brak wartości
-console.log(typeof(d));
-let f; // zmienna typu UNDEFINED, zmienna niezdefiniowana
-console.log(typeof(f));
+let a = 15;
+let b = 3;
+
+// console.log(a+b);  ctrl + k + c  automatyczne komentowanie zaznaczonego 
+// console.log(a-b);                fragmentu kodu
+// console.log(a*b);
+// console.log(a/b);
+// console.log(a % 4);
+// console.log(a++);  inkrementacja
+// console.log(b--);  dekrementacja
+// console.log(+a); -> 15
+// console.log(-b); -> -3
+console.log(2===2); // -> true bo liczba ta sama i typ danych ten sam
+console.log(2==='2'); //-> false bo liczba ta sama a typ danych inny
+console.log(2=='2'); // -> true bo liczba ta sama, typ nie jest weryfikowany
+console.log(2==2); // -> true bo liczba ta sama, typ nie jest weryfikowany
+console.log(3!=='3');
+console.log(3!='3');
