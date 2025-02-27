@@ -1,20 +1,15 @@
-let x = 116;
+let x = 5;
 
-// if (x==15) {
-//     console.log('x jest równe 15');
-// } else if (x<15) {
-//     console.log('x jest mniejszy niż 15');
-// } else if(x>15){
-//     console.log('x jest większy niż 15');
-// } else {
-//     console.log('nieprawidłowa wartość');
-// }
-
-// if (x % 2 === 0){
-//     console.log('liczba jest parzysta');
-// } else {
-//     console.log('liczba jest nieparzysta');
-// }
-
-const czyParzyste = (x % 2 === 0)? 'parzysta':'nieparzysta'
-console.log(czyParzyste);
+switch (x){
+    case 1:
+        console.log('x wynosi ' + x);
+        break;
+    case 3:
+        console.log('x wynosi ' + x);
+        break;
+    case 5:
+        console.log('x wynosi ' + x);
+        break;
+    default:
+        console.log('żadna z powyższych opcji nie została wybrana');
+}
