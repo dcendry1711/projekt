@@ -1,12 +1,20 @@
-// let a = 25; 
-// for (i = 0; a >= i; i++) {
-//     console.log(i);
+// let a = 1;
+// while (a <= 10){
+//     console.log(a);
+//     a++;
 // }
 
-//wyswietlic na konsoli 10 kolejnych parzystych liczb, począwszy od 2
+//Tworzymy skrypt który obliczy sumę dwóch liczb. 
+// Liczby będą podane przez użytkownika. 
+// Algorytm będzie wyświetlał liczby do momentu aż ich suma będzie mniejsza od 0.
 
-for (let i=2; i <=20 ; i++) {
-    if (i % 2 === 0){
-        console.log(i);
-    }
+// let a = 0 ;
+// let b = 0 ;
+let suma = 0;
+
+while (suma >= 0){
+    let a = parseInt(prompt('podaj pierwszą liczbę'));
+    let b = parseInt(prompt('podaj drugą liczbę'));
+    suma = a + b;
+    console.log('Suma podanych liczb wynosi: ' + suma);
 }
