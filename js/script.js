@@ -1,52 +1,64 @@
-const samochody = [
-    {
-        marka: 'Opel',
-        model: 'Astra',
-        przebieg: 120000,
-        cena: 10000,
-        ilosc: 3,
-        wyswietl: function(){
-            return console.log(this.marka + ' '+this.model+' '+this.cena);
-        }
-    },
-    {
-        marka: 'Mazda',
-        model: '5',
-        przebieg: 140000,
-        cena: 12000,
-        ilosc: 4,
-        wyswietl: function(){
-            return console.log(this.marka + ' '+this.model+' '+this.cena);
-        } 
-    },
-    {
-        marka: 'Mazda',
-        model: '6',
-        przebieg: 230000,
-        cena: 12000,
-        ilosc: 4,
-        wyswietl: function(){
-            return console.log(this.marka + ' '+this.model+' '+this.cena);
-        }   
-    }
-];
+let wybor;
+const pracownicy = new Array();
 
-// function wyswietl(){
-//     console.log(this);
+function Osoba(imie,nazwisko,numer){
+    this.imie = imie;
+    this.nazwisko = nazwisko;
+    this.numer = parseInt(numer)
+}
+
+// function tworzenie(imie,nazwisko){
+//     osoba = new Osoba(imie,nazwisko);
+//     pracownicy.push(osoba);
 // }
 
-// wyswietl.call(samochody);
+// function usuwanie(nr){
+//     delete pracownicy[nr];
+// }
 
-function newCar(marka,model,przebieg){
-    this.marka = marka;
-    this.model = model;
-    this.przebieg = przebieg
+
+const metody = {
+    wyswietlPracownika: function() {
+        document.write('Imię: ', this.imie, ' nazwisko: ', this.nazwisko)
+    },
+    usuwaniePracownika: function() {
+        delete pracownicy[this.numer-1];
+    },
+    tworzeniePracownika: function(imie,nazwisko,numer) {
+        console.log(this)
+        let osoba = new Osoba(imie,nazwisko,numer);
+        pracownicy.push(osoba);
+    }
 }
 
-function setPrice(cena){
-    newCar.call(this, 'Mazda','2',45000);
-    this.cena = cena;
-    console.log('szczegóły samochodu: ' , this);
+while(wybor!=0){
+    wybor = prompt('Podaj co chcesz zrobić? 1- tworzenie 2-usuwanie 3-wyswietlanie 4-wyświetl pracownika0 0-wyjscie')
+switch(wybor){
+    case '1': 
+        let imie = prompt('Podaj imię: ');
+        let nazwisko = prompt('Podaj nazwisko: ');
+        let numer = prompt('Podaj nr pracownika: ')
+        let tworzenie = metody.tworzeniePracownika.bind(pracownicy)
+        tworzenie(imie,nazwisko,numer);
+        break;
+    case '2':
+        let nrP = prompt('Podaj numer ideksu do usunięcia: ');
+        metody.usuwaniePracownika.apply(pracownicy[nrP]);
+        wybor=0;
+        break;
+    case '3':
+        pracownicy.forEach((e)=>{
+            console.log(e);
+        })
+        break;
+    case '4': 
+        let nr = prompt('Podaj nr indeksu pracownika: ');
+        metody.wyswietlPracownika.call(pracownicy[nr]);
+        wybor=0;
+        break;
+    default:
+        document.write('nie wybrano odpowiedniej opcji!')
+}
 }
 
-const nowySamochod = new setPrice(parseInt(prompt('Podaj cenę samochodu: ')));
+console.log(pracownicy);
